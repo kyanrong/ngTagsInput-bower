@@ -5,7 +5,7 @@
  * Copyright (c) 2013-2015 Michael Benford
  * License: MIT
  *
- * Generated at 2015-10-19 22:00:13 +0800
+ * Generated at 2015-10-20 15:13:35 +0800
  */
 (function() {
 'use strict';
@@ -852,8 +852,8 @@ tagsInput.directive('tiAutosize', ["tagsInputConfig", function(tagsInputConfig) 
 
             var getHiddenElementWidth = function () {
               var hidden = angular.element(document.querySelector('#tagsInputPlaceholder'));
-              hidden.text(attrs.placeholder + '...');
-              var width = hidden.width();
+              hidden.text(attrs.placeholder);
+              var width = hidden.width() + 20;
               return width;
             };
 
@@ -870,7 +870,7 @@ tagsInput.directive('tiAutosize', ["tagsInputConfig", function(tagsInputConfig) 
                     width = span.prop('offsetWidth');
 					if(width === 0) {
 						width = getHiddenElementWidth();					
-					}
+					}	
                     span.css('display', 'none');
                 }
 
